@@ -67,7 +67,10 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Buckalew Financial Services. All rights reserved.</span>
-          <span>Privacy · Terms · Licensing · Accessibility</span>
+          <span className="flex-center" style={{ gap: 6 }}>
+            <Link to="/privacy-policy">Privacy Policy</Link> ·{' '}
+            <Link to="/terms">Terms of Use</Link> · Licensing info available upon request
+          </span>
         </div>
       </div>
     </footer>
