@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { articles } from '../data/articles'
 
@@ -25,6 +26,12 @@ export default function ArticleDetail() {
 
   return (
     <>
+      <SEO
+        title={`${article.title} | Buckalew Education Center`}
+        description={article.excerpt}
+        path={`/education/${article.id}`}
+        type="article"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb">
