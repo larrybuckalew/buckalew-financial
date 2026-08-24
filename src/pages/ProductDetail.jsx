@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { getProduct } from '../data/products'
 
@@ -10,6 +11,11 @@ export default function ProductDetail() {
 
   return (
     <>
+      <SEO
+        title={`${product.name} | Buckalew Financial Services`}
+        description={product.short}
+        path={`/products/${product.id}`}
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb">
