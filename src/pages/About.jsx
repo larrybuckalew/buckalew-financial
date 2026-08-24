@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import Counter from '../components/Counter'
 
@@ -20,6 +21,11 @@ const team = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Us | Buckalew Financial Services"
+        description="Independent life insurance agency serving families and businesses since 1999. Meet the Buckalew team and learn why our no-pressure approach has earned a 4.9/5 client rating."
+        path="/about"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / About</div>
