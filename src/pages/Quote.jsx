@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import { termRates, termMultipliers, wholeLifeRates, finalExpenseRates, getAgeBand } from '../data/rateTables'
 
 const STEPS = ['About You', 'Health Profile', 'Coverage', 'Your Estimate']
@@ -53,6 +54,11 @@ export default function Quote() {
 
   return (
     <>
+      <SEO
+        title="Free Life Insurance Quote | Buckalew Financial Services"
+        description="Get an instant life insurance estimate in under two minutes. Compare term, whole, and final expense rates — no email required, no obligation."
+        path="/quote"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / Get a Quote</div>
