@@ -14,6 +14,8 @@ import Contact from './pages/Contact'
 import Education from './pages/Education'
 import ArticleDetail from './pages/ArticleDetail'
 import FAQ from './pages/FAQ'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import Terms from './pages/Terms'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -57,6 +59,8 @@ export default function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/education/:id" element={<ArticleDetail />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
