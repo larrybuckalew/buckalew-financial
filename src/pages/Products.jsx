@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { products } from '../data/products'
 
 export default function Products() {
   return (
     <>
+      <SEO
+        title="Life Insurance Products | Buckalew Financial Services"
+        description="Explore term life, whole life, universal life, final expense, and group life insurance. Independent guidance to match the right coverage to your goals and budget."
+        path="/products"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / Products</div>
