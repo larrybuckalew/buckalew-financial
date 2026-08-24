@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
+import { trackEvent } from '../components/Analytics'
 
 const initial = { name: '', email: '', phone: '', interest: 'Term Life Insurance', message: '' }
 
@@ -29,6 +30,7 @@ export default function Contact() {
     const errs = validate()
     setErrors(errs)
     if (Object.keys(errs).length === 0) {
+      trackEvent('contact_form_submitted', { interest: form.interest })
       setSent(true)
       setForm(initial)
     }
