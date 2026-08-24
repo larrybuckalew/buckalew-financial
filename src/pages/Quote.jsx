@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import { trackEvent } from '../components/Analytics'
 import { termRates, termMultipliers, wholeLifeRates, finalExpenseRates, getAgeBand } from '../data/rateTables'
 
 const STEPS = ['About You', 'Health Profile', 'Coverage', 'Your Estimate']
@@ -51,6 +52,17 @@ export default function Quote() {
   }
 
   const reset = () => { setStep(0); setGender(''); setHealth(''); setTobacco('') }
+
+  // Fire a conversion event when the user reaches their estimate
+  const goToResults = () => {
+    if (!canNext) return
+    trackEvent('quote_completed', {
+      policy_type: policyType,
+      term_length: policyType === 'term' ? term : null,
+      coverage_amount: policyType === 'final' ? Math.min(coverage, 50000) : coverage,
+    })
+    setStep(3)
+  }
 
   return (
     <>
@@ -227,7 +239,7 @@ export default function Quote() {
                   </button>
                   <button className="btn btn-primary" disabled={!canNext}
                     style={{ opacity: canNext ? 1 : 0.5 }}
-                    onClick={() => canNext && setStep(step + 1)}>
+                    onClick={goToResults}>
                     Continue →
                   </button>
                 </div>
