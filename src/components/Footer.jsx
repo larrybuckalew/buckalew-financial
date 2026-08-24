@@ -46,10 +46,10 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <ul className="footer-links">
-              <li>📞 (555) 214-8890</li>
+              <li>📞 (813) 863-5917</li>
               <li>✉️ hello@buckalewfinancial.com</li>
-              <li>📍 420 Commerce Street, Suite 210<br />Nashville, TN 37219</li>
-              <li>🕒 Mon–Fri, 8:30am – 5:30pm CT</li>
+              <li>📍 3031 Mojave Oak Dr<br />Valrico, FL 33594</li>
+              <li>🕒 Mon–Fri, 9:00am – 5:30pm ET</li>
             </ul>
           </div>
         </div>
