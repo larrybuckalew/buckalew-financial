@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import Analytics from './components/Analytics'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
@@ -42,6 +43,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Analytics />
       <Navbar />
       <main>
         <Routes>
