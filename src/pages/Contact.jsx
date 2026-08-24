@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 
 const initial = { name: '', email: '', phone: '', interest: 'Term Life Insurance', message: '' }
@@ -35,6 +36,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us | Buckalew Financial Services"
+        description="Questions about life insurance? Call (555) 214-8890 or send us a message. A real person answers — we respond within one business day."
+        path="/contact"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / Contact</div>
