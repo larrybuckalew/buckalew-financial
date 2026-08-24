@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import Accordion from '../components/Accordion'
 import { faqs } from '../data/faqs'
@@ -6,6 +7,11 @@ import { faqs } from '../data/faqs'
 export default function FAQ() {
   return (
     <>
+      <SEO
+        title="Life Insurance FAQ | Buckalew Financial Services"
+        description="Straight answers to common life insurance questions: how much coverage you need, term vs. whole life, medical exams, taxes on death benefits, and more."
+        path="/faq"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / FAQ</div>
