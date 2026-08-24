@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { articles } from '../data/articles'
 
 export default function Education() {
   return (
     <>
+      <SEO
+        title="Life Insurance Education Center | Buckalew Financial Services"
+        description="Clear, honest guides on life insurance: how much coverage you need, term vs. whole life, no-exam underwriting, beneficiary mistakes, and more — written by licensed advisors."
+        path="/education"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / Education Center</div>
