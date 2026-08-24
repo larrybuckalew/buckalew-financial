@@ -38,7 +38,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us | Buckalew Financial Services"
-        description="Questions about life insurance? Call (555) 214-8890 or send us a message. A real person answers — we respond within one business day."
+        description="Questions about life insurance? Call (813) 863-5917 or send us a message. A real person answers — we respond within one business day."
         path="/contact"
       />
       <section className="page-hero">
@@ -66,7 +66,7 @@ export default function Contact() {
                 <div className="contact-info-icon">📞</div>
                 <div>
                   <b>Phone</b><br />
-                  <span style={{ color: 'var(--text-muted)' }}>(555) 214-8890<br />Mon–Fri, 8:30am – 5:30pm CT</span>
+                  <span style={{ color: 'var(--text-muted)' }}>(813) 863-5917<br />Mon–Fri, 9:00am – 5:30pm ET</span>
                 </div>
               </div>
               <div className="contact-info-card">
@@ -80,7 +80,7 @@ export default function Contact() {
                 <div className="contact-info-icon">📍</div>
                 <div>
                   <b>Office</b><br />
-                  <span style={{ color: 'var(--text-muted)' }}>420 Commerce Street, Suite 210<br />Nashville, TN 37219</span>
+                  <span style={{ color: 'var(--text-muted)' }}>3031 Mojave Oak Dr<br />Valrico, FL 33594</span>
                 </div>
               </div>
 
