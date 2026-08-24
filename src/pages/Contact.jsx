@@ -4,12 +4,22 @@ import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { trackEvent } from '../components/Analytics'
 
+// ─────────────────────────────────────────────────────────────
+// FORMSPREE — free form backend (https://formspree.io)
+// 1. Create a free account and a new form
+// 2. Copy your form ID (looks like "xkndqzab")
+// 3. Paste it below — submissions will be emailed to you
+// ─────────────────────────────────────────────────────────────
+const FORMSPREE_ID = 'YOUR_FORM_ID'
+
 const initial = { name: '', email: '', phone: '', interest: 'Term Life Insurance', message: '' }
 
 export default function Contact() {
   const [form, setForm] = useState(initial)
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState(null)
 
   const set = (k) => (e) => {
     setForm({ ...form, [k]: e.target.value })
@@ -25,14 +35,35 @@ export default function Contact() {
     return errs
   }
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
     const errs = validate()
     setErrors(errs)
     if (Object.keys(errs).length === 0) {
       trackEvent('contact_form_submitted', { interest: form.interest })
-      setSent(true)
-      setForm(initial)
+      setSending(true)
+      setSendError(null)
+
+      try {
+        // Send via Formspree when configured; otherwise simulate success locally
+        if (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORM_ID') {
+          const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(form),
+          })
+          if (!res.ok) throw new Error('Formspree rejected the submission')
+        } else {
+          // Demo mode: no backend configured yet
+          await new Promise((r) => setTimeout(r, 600))
+        }
+        setSent(true)
+        setForm(initial)
+      } catch (e) {
+        setSendError('Something went wrong sending your message. Please call us at (813) 863-5917 instead.')
+      } finally {
+        setSending(false)
+      }
     }
   }
 
@@ -86,9 +117,17 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="map-placeholder">
-                🗺️<br />Interactive map placeholder<br />(connect Google Maps embed here)
-              </div>
+              <iframe
+                title="Buckalew Financial Services office location"
+                src="https://www.google.com/maps?q=3031+Mojave+Oak+Dr,+Valrico,+FL+33594&output=embed"
+                style={{
+                  width: '100%', height: 220, border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-lg)', marginTop: 22,
+                }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </Reveal>
 
@@ -98,6 +137,11 @@ export default function Contact() {
               {sent && (
                 <div className="success-banner mb-2">
                   ✓ Thank you! Your message has been sent. An advisor will reach out within one business day.
+                </div>
+              )}
+              {sendError && (
+                <div className="error-msg mb-2" style={{ fontSize: '0.9rem' }}>
+                  ⚠ {sendError}
                 </div>
               )}
 
@@ -137,7 +181,9 @@ export default function Contact() {
                     {errors.message && <div className="error-msg">{errors.message}</div>}
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary mt-1">Send Message →</button>
+                <button type="submit" className="btn btn-primary mt-1" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send Message →'}
+                </button>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: 12 }}>
                   By submitting, you agree to be contacted about insurance products.
                   We never sell your information.
