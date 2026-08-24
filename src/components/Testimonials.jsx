@@ -6,35 +6,31 @@ const testimonials = [
     text: 'After my father passed without any coverage, I promised myself my family would never face that. Buckalew walked me through everything patiently — no pressure, no jargon. I had a 20-year term policy in force within a week.',
     name: 'Marcus T.',
     role: 'Term Life Client, Nashville',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
   },
   {
     text: 'As a small business owner, I needed key person coverage and a buy-sell solution fast. Their team coordinated with my attorney and had both policies placed in under three weeks. Truly professional.',
     name: 'Dana R.',
     role: 'Business Owner, Franklin',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80',
   },
   {
     text: 'I assumed at age 62 with my health history that insurance was off the table. They found me a guaranteed-issue final expense policy that was affordable and gave my daughter real peace of mind.',
     name: 'Evelyn S.',
     role: 'Final Expense Client, Murfreesboro',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
   },
   {
     text: 'The quote calculator on their site got me close, but sitting down with an advisor refined it perfectly. We laddered term and whole life to fit our budget exactly. Best financial decision we have made.',
     name: 'James & Priya K.',
     role: 'Family Clients, Brentwood',
+    photo: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=200&q=80',
   },
 ]
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0)
   const t = testimonials[index]
-  const initials = t.name
-    .replace(/[^A-Za-z &]/g, '')
-    .split(/[\s&]+/)
-    .filter(Boolean)
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase()
 
   const prev = () => setIndex((index - 1 + testimonials.length) % testimonials.length)
   const next = () => setIndex((index + 1) % testimonials.length)
@@ -45,7 +41,7 @@ export default function Testimonials() {
         <div className="stars">★★★★★</div>
         <p className="testimonial-text">{t.text}</p>
         <div className="testimonial-author">
-          <div className="avatar">{initials}</div>
+          <img className="avatar-img" src={t.photo} alt={t.name} loading="lazy" />
           <div>
             <div className="name">{t.name}</div>
             <div className="role">{t.role}</div>

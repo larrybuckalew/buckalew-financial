@@ -21,7 +21,14 @@ export default function ProductDetail() {
       </section>
 
       <section className="section">
-        <div className="container product-hero-grid">
+        <div className="container">
+          <Reveal>
+            <div className="product-banner">
+              <img src={product.image} alt={product.name} loading="eager" />
+            </div>
+          </Reveal>
+        </div>
+        <div className="container product-hero-grid" style={{ marginTop: 14 }}>
           <Reveal>
             <div>
               <span className="eyebrow">Overview</span>

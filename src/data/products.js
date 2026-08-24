@@ -2,6 +2,7 @@ export const products = [
   {
     id: 'term-life',
     icon: '🛡️',
+    image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80',
     name: 'Term Life Insurance',
     tagline: 'Affordable protection for a set period of time.',
     short:
@@ -27,6 +28,7 @@ export const products = [
   {
     id: 'whole-life',
     icon: '🏛️',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80',
     name: 'Whole Life Insurance',
     tagline: 'Lifelong protection with guaranteed cash value.',
     short:
@@ -52,6 +54,7 @@ export const products = [
   {
     id: 'universal-life',
     icon: '📈',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80',
     name: 'Universal Life Insurance',
     tagline: 'Flexible permanent coverage that adapts to you.',
     short:
@@ -77,6 +80,7 @@ export const products = [
   {
     id: 'final-expense',
     icon: '🕊️',
+    image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1000&q=80',
     name: 'Final Expense Insurance',
     tagline: 'Peace of mind for your loved ones, simplified.',
     short:
@@ -102,6 +106,7 @@ export const products = [
   {
     id: 'group-life',
     icon: '👥',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80',
     name: 'Group & Business Life',
     tagline: 'Protect your team and your business.',
     short:

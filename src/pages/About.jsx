@@ -11,10 +11,10 @@ const timeline = [
 ]
 
 const team = [
-  ['Robert Buckalew', 'Founder & Principal', 'RB'],
-  ['Sarah Mitchell', 'Senior Life Advisor', 'SM'],
-  ['David Chen', 'Business Solutions Lead', 'DC'],
-  ['Angela Foster', 'Client Services Director', 'AF'],
+  ['Robert Buckalew', 'Founder & Principal', 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'],
+  ['Sarah Mitchell', 'Senior Life Advisor', 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80'],
+  ['David Chen', 'Business Solutions Lead', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'],
+  ['Angela Foster', 'Client Services Director', 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'],
 ]
 
 export default function About() {
@@ -49,6 +49,14 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={120}>
+            <div className="img-frame mb-2">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+                alt="The Buckalew Financial Services team collaborating"
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
             <div className="stats-band" style={{ borderRadius: 'var(--radius-lg)', padding: '44px 32px' }}>
               <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
                 <div><div className="stat-num"><Counter end={25} suffix="+" /></div><div className="stat-label">Years in Business</div></div>
@@ -87,10 +95,10 @@ export default function About() {
           <h2 className="section-title">Meet Your Advisors</h2>
           <p className="section-sub">Licensed professionals who answer the phone, return calls, and never pressure.</p>
           <div className="grid-3" style={{ textAlign: 'center' }}>
-            {team.map(([name, role, initials], i) => (
+            {team.map(([name, role, photo], i) => (
               <Reveal key={name} delay={i * 90}>
                 <div className="card team-card">
-                  <div className="team-avatar">{initials}</div>
+                  <img className="team-photo" src={photo} alt={`${name}, ${role}`} loading="lazy" />
                   <h3 style={{ fontSize: '1.05rem' }}>{name}</h3>
                   <div className="team-role mt-1">{role}</div>
                 </div>

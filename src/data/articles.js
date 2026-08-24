@@ -2,6 +2,7 @@ export const articles = [
   {
     id: 'how-much-life-insurance',
     tag: 'Planning Basics',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80',
     title: 'How Much Life Insurance Do You Really Need?',
     excerpt:
       'The "10x income" rule is a starting point, not an answer. Learn the five factors that determine your true coverage gap.',
@@ -25,6 +26,7 @@ export const articles = [
   {
     id: 'term-vs-whole-life',
     tag: 'Product Education',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80',
     title: 'Term vs. Whole Life: Which Is Right for You?',
     excerpt:
       'It is not a battle — it is a toolbox. Here is when each type of policy makes sense, and why many families own both.',
@@ -45,6 +47,7 @@ export const articles = [
   {
     id: 'no-exam-underwriting',
     tag: 'Underwriting',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1000&q=80',
     title: 'No Medical Exam? How Accelerated Underwriting Works',
     excerpt:
       'Algorithms, prescription databases, and motor vehicle records now replace needles for many applicants. Approval can take hours, not weeks.',
@@ -65,6 +68,7 @@ export const articles = [
   {
     id: 'beneficiary-mistakes',
     tag: 'Policy Management',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=80',
     title: '7 Beneficiary Designation Mistakes That Cost Families Millions',
     excerpt:
       'Naming the wrong person — or forgetting to update after divorce — can derail even a perfectly planned policy.',
@@ -87,6 +91,7 @@ export const articles = [
   {
     id: 'life-insurance-retirement',
     tag: 'Advanced Strategies',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1000&q=80',
     title: 'Using Life Insurance as a Retirement Supplement',
     excerpt:
       'Indexed universal life can create tax-free retirement income — when structured correctly. Understand the mechanics and the risks.',
@@ -107,6 +112,7 @@ export const articles = [
   {
     id: 'business-owner-guide',
     tag: 'Business Solutions',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
     title: "The Business Owner's Guide to Key Person Insurance",
     excerpt:
       'If your top salesperson or technical founder died tomorrow, could your business survive the year? Key person insurance buys time.',

@@ -23,6 +23,9 @@ export default function Education() {
               <Reveal key={a.id} delay={(i % 3) * 90}>
                 <Link to={`/education/${a.id}`}>
                   <div className="card article-card" style={{ height: '100%' }}>
+                    <div className="card-media">
+                      <img src={a.image} alt={a.title} loading="lazy" />
+                    </div>
                     <div className="article-meta">
                       <span className="article-tag">{a.tag}</span>
                       <span>{a.date}</span>

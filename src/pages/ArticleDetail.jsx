@@ -44,6 +44,11 @@ export default function ArticleDetail() {
       <section className="section" style={{ paddingTop: 48 }}>
         <div className="container">
           <Reveal>
+            <div className="product-banner">
+              <img src={article.image} alt={article.title} loading="eager" />
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
             <Body blocks={article.body} />
           </Reveal>
 

@@ -32,13 +32,29 @@ export default function Home() {
             </div>
 
             <Reveal delay={150}>
-              <div className="hero-card">
-                <h3>Why Families Choose Buckalew</h3>
-                <p>Independent advice means we work for you — not an insurance company.</p>
-                <div className="hero-stat-row"><span className="k">Carriers Compared</span><span className="v">40+</span></div>
-                <div className="hero-stat-row"><span className="k">Avg. Client Savings</span><span className="v">31%</span></div>
-                <div className="hero-stat-row"><span className="k">Client Satisfaction</span><span className="v">4.9 / 5</span></div>
-                <div className="hero-stat-row"><span className="k">Years Serving TN</span><span className="v">25+</span></div>
+              <div className="hero-media">
+                <div className="img-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=900&q=80"
+                    alt="Father lifting his smiling child — protecting what matters most"
+                    loading="eager"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+                <div className="float-card">
+                  <div className="fc-icon">🛡️</div>
+                  <div>
+                    <b>$2B+ Protected</b>
+                    <span>for 12,400+ families & businesses</span>
+                  </div>
+                </div>
+                <div className="float-card" style={{ left: 'auto', right: -18, bottom: 'auto', top: 26 }}>
+                  <div className="fc-icon">⭐</div>
+                  <div>
+                    <b>4.9 / 5 Rating</b>
+                    <span>from verified client reviews</span>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -79,6 +95,39 @@ export default function Home() {
           <div className="mt-2 flex-center" style={{ justifyContent: 'center' }}>
             <Link to="/products" className="btn btn-outline">View All Products</Link>
           </div>
+        </div>
+      </section>
+
+      {/* Why independent */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container split">
+          <Reveal>
+            <div className="img-frame">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80"
+                alt="Advisor shaking hands with a client"
+                loading="lazy"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <span className="eyebrow">The Buckalew Difference</span>
+            <h2 className="section-title">Why Independent Advice Matters</h2>
+            <p style={{ color: 'var(--text-muted)', marginBottom: 18 }}>
+              Captive agents can only sell you one company's products. As an
+              independent agency, we compare dozens of top-rated carriers side by
+              side — so the recommendation you get is based on your needs, not a
+              corporate quota.
+            </p>
+            <ul className="feature-list mb-2">
+              <li>We shop 40+ A-rated carriers on your behalf</li>
+              <li>Average client savings of 31% vs. single-carrier quotes</li>
+              <li>Unbiased guidance before, during, and after the sale</li>
+              <li>Local Nashville team that answers when you call</li>
+            </ul>
+            <Link to="/about" className="btn btn-outline">More About Us →</Link>
+          </Reveal>
         </div>
       </section>
 

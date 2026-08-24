@@ -22,8 +22,13 @@ export default function Products() {
             {products.map((p, i) => (
               <Reveal key={p.id} delay={(i % 2) * 100}>
                 <div className="card" style={{ height: '100%' }}>
-                  <div className="card-icon">{p.icon}</div>
-                  <h3>{p.name}</h3>
+                  <div className="card-media">
+                    <img src={p.image} alt={p.name} loading="lazy" />
+                  </div>
+                  <div className="flex-center">
+                    <span style={{ fontSize: '1.4rem' }}>{p.icon}</span>
+                    <h3>{p.name}</h3>
+                  </div>
                   <p style={{ fontStyle: 'italic', color: 'var(--gold-500)', marginBottom: 10 }}>{p.tagline}</p>
                   <p>{p.short}</p>
                   <div className="flex-center mt-1">
