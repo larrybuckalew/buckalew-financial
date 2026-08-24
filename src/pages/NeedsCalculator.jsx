@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const fmt = (n) => '$' + Math.round(n).toLocaleString()
 
@@ -19,6 +20,11 @@ export default function NeedsCalculator() {
 
   return (
     <>
+      <SEO
+        title="How Much Life Insurance Do I Need? | Free Calculator"
+        description="Free coverage needs calculator using the DIME method. Estimate how much life insurance your family needs based on income, debts, mortgage, education, and final expenses."
+        path="/needs-calculator"
+      />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumb"><Link to="/">Home</Link> / Needs Calculator</div>
