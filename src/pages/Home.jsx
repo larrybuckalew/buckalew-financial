@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import Counter from '../components/Counter'
 import Testimonials from '../components/Testimonials'
@@ -7,6 +8,11 @@ import { products } from '../data/products'
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Buckalew Financial Services | Life Insurance You Can Trust"
+        description="Independent life insurance agency in Nashville, TN. Compare 40+ top carriers for term, whole, universal, and final expense life insurance. Free quotes, no pressure."
+        path="/"
+      />
       {/* Hero */}
       <section className="hero">
         <div className="container">
